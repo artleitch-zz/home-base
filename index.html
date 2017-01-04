@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Handy Links:</h1>
+    <h3>SDK CDNs:</h3>
+    <div class="form-group">
+      <label>1.5.2</label>
+      <div class="input-group">
+        <input class="copy-to-clipboard-input form-control" name="cdn-1-5-2" type="url" value="https://jibestream-sdk.azureedge.net/web/v1.5.2/jmap.min.js" />
+        <span class="input-group-btn">
+            <button class="btn btn-primary copy-to-clipboard"
+                    type="button"
+                    id="copy-button"
+                    data-input="cdn-1-5-2"
+                    title="Copy to Clipboard">
+              Copy
+            </button>
+          </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>1.5.0</label>
+      <div class="input-group">
+        <input class="copy-to-clipboard-input form-control" name="cdn-1-5-0" type="url" value="https://jibestream-sdk.azureedge.net/web/v1.5.0/jmap.min.js" />
+        <span class="input-group-btn">
+            <button class="btn btn-primary copy-to-clipboard"
+                    type="button"
+                    id="copy-button"
+                    data-input="cdn-1-5-0"
+                    title="Copy to Clipboard">
+              Copy
+            </button>
+          </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>1.4.0</label>
+      <div class="input-group">
+        <input class="copy-to-clipboard-input form-control" name="cdn-1-4-0" type="url" value="https://jibestream-sdk.azureedge.net/web/v1.4.0/jmap.min.js" />
+        <span class="input-group-btn">
+            <button class="btn btn-primary copy-to-clipboard"
+                    type="button"
+                    id="copy-button"
+                    data-input="cdn-1-4-0"
+                    title="Copy to Clipboard">
+              Copy
+            </button>
+          </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>1.3.0</label>
+      <div class="input-group">
+        <input class="copy-to-clipboard-input form-control" name="cdn-1-3-0" type="url" value="https://jibestream-sdk.azureedge.net/web/v1.3.0/jmap.min.js" />
+        <span class="input-group-btn">
+            <button class="btn btn-primary copy-to-clipboard"
+                    type="button"
+                    id="copy-button"
+                    data-input="cdn-1-3-0"
+                    title="Copy to Clipboard">
+              Copy
+            </button>
+          </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>1.2.4</label>
+      <div class="input-group">
+        <input class="copy-to-clipboard-input form-control" name="cdn-1-2-4" type="url" value="https://jibestream-sdk.azureedge.net/web/v1.2.4/jmap.min.js" />
+        <span class="input-group-btn">
+            <button class="btn btn-primary copy-to-clipboard"
+                    type="button"
+                    id="copy-button"
+                    data-input="cdn-1-2-4"
+                    title="Copy to Clipboard">
+              Copy
+            </button>
+          </span>
+      </div>
+    </div>
+    <h3>Links to documentation</h3>
+    <h3>Links to client websites</h3>
+    <h3>Links to Git repos</h3>
+    <h3>Links to JSFiddles</h3>
+    <h3>Links to sandboxes</h3>
+    <h3>Link to playground</h3>
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"
+      integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK"
+      crossorigin="anonymous"></script>
+
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+
+        const fn = event => {
+          const inputName = event.currentTarget.dataset.input || event.currentTarget.getAttribute('name')
+          const input = document.querySelector(`[name="${inputName}"]`)
+          input.select();
+
+          try {
+            var successful = document.execCommand('copy');
+            var msg = successful ? 'successful' : 'unsuccessful';
+          } catch (err) {
+            console.error('There was an error in copying to clipboard')
+          }
+        }
+
+        const copyToClipboardBtns = document.querySelectorAll('.copy-to-clipboard')
+        copyToClipboardBtns.forEach(a => {
+          a.addEventListener('click', fn)
+        })
+
+        const copyToClipboardInputs = document.querySelectorAll('.copy-to-clipboard-input')
+        copyToClipboardInputs.forEach(a => {
+          a.addEventListener('focus', fn)
+        })
+      })
+
+    </script>
+
+  </body>
+</html>
